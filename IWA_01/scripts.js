@@ -1,4 +1,4 @@
-const MAX_NUMBER = 15
+const MAX_NUMBER = 20
 const MIN_NUMBER = -5
 const STEP_AMOUNT = 5;
 
