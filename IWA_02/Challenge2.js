@@ -4,4 +4,4 @@ This is the date that a user created their account*/
 
 const date = '10/07/2014'
 
-console(date)
+console.log(date)
