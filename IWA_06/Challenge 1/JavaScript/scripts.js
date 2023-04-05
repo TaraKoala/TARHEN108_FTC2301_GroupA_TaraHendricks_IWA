@@ -8,3 +8,4 @@ const secondaryValid = typeof number == secondaryPhone
 
 console.log('Primary phone is valid numerical string:', primaryValid)
 console.log('Secondary phone is valid numerical string:', secondaryValid )
+
