@@ -3,4 +3,8 @@ import './alex.js'
 import './johannes.js'
 import './nwabisa.js'
 
-console.log('Roles:', nwabisa.role, johannes.role, alex.role)
+import { role as roleA} from './nwabisa.js'
+import { role as roleB} from './johannes.js'
+import { role as roleC} from './alex.js'
+
+console.log('Roles:', roleA, ',' , roleB, ',', roleC)
