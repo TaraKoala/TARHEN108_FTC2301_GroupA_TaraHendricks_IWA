@@ -8,6 +8,7 @@ const secondaryValid = true
 
 //parsint isNaN
 
+
 if (primaryValid === true) {
     console.log('Primary phone is valid numerical string:', primaryValid)
 }
