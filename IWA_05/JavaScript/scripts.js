@@ -13,7 +13,7 @@ const batteries = 35 * 2
 const pens = 5 * NONE_SELECTED
 
 let customers = '1'
-let items = shoes + batteries + pens + shirts
+let items = shoes + batteries + pens + shirts + toys
 
 
 // RSA - shipping: 400
@@ -53,32 +53,3 @@ if (location_ === 'RSA') {
 }
 
 location_ == 'NK' ? console.log(BANNED_WARNING) : console.log('Price: ' + currency + (items + shipping))
-
-/*if (location_ = 'NAM') {
-   shipping = 600 
-} else {
-    shipping = 800
-    shoes = 300 * 1
-    toys - 100 * 5
-    shirts = 150 * 'NONE_SELECTED'
-     batteries = 35 * 2
-     pens = 5 * 'NONE_SELECTED' 
-     shipping = null
-     currency = $
-}
-
-
-if (shoes + batteries + pens + shirts > 1000) {
-	if (location_  = NAM && customers < 2) {
-			if (location_  = RSA)
-		    shipping = 0 || calcShipping
-		}
-	}
-
-
-if (shipping = 0 && customers !== 1) { console.log(FREE_WARNING) }
-
-location_  = 'NK' ? console.log(BANNED_WARNING) : console.log('price', currency, shoes + batteries + pens + shirts + shipping)
-
-customers = '1'
-currency = null*/

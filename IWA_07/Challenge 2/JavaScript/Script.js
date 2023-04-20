@@ -1,4 +1,9 @@
 const nickname= "Timmy";
 const firstname = "Timothy";
 
-console.log("Good Morning, ${nickname} || {firstname}!")
+if (firstname == null && nickname == null) {
+    console.log(`Good Morning!`)  
+}
+else {
+    console.log(`Good Morning, ${nickname || firstname}!`)
+}
