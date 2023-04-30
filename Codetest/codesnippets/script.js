@@ -30,3 +30,12 @@ if ( hourOfDay === 00 && minuteOfDay === 00){
 }else{
     console.log("time of day can not be found")
 }
+
+'J' - 09
+const taxAsDecimal = parseInt(tax['913']) / 100
+const startingAfterTax = salary - (salary*taxAsDecimal)
+const type = rent[`${size}-${lodging}`]
+
+const balance = startingAfterTax - expenses.transport - expenses.food - type
+console.log(balance.toFixed(2))
+

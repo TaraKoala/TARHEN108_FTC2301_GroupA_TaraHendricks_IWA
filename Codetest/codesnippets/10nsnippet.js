@@ -1,5 +1,4 @@
 const currentYear = new Date().getFullYear()
-
 const holidays = {
     0: {
         id: 0,
@@ -13,7 +12,13 @@ const holidays = {
     },
     2: {
         id: 2,
-        name: 'Day of Goodwill',
+        _name: 'Day of Goodwill',
+        get name() {
+            return this._name
+        },
+        set name(value) {
+            this._name = value
+        },
         date: new Date(`26 December ${currentYear}`),
     },
     3: {
@@ -29,7 +34,7 @@ const holidays = {
     5: {
         id: 5,
         name: 'Heritage Day',
-        date: new Date(`24 September ${currentYear}`),
+        date: new Date(`24 September ${currentYear} 08:00`),
     },
     6: {
         id: 6,
@@ -47,40 +52,25 @@ const holidays = {
         date: new Date(`21 March ${currentYear}`)
     },
 }
-
 const christmas = 6
 const futureId = 9
-
 // Do not change code above this comment
-
-
-if (holidays[`${futureId}`]) {
-    console.log(holidays[`${futureId}`].name);
-} else {
-    console.log(`ID ${futureId} not created yet`)
-}
-
-
+console.log(holidays[futureId]?.name || `ID ${futureId} not created yet`)
 const copied = {
-    id: holidays[christmas].id,
-    name: holidays[christmas].name,
-    date: holidays[christmas].date,
+    id: holidays[christmas ].id,
+    name: holidays[christmas ].name,
+    date: new Date(holidays[christmas ].date.getTime()),
 }
 copied.name = 'X-mas Day'
-
-correctDate = new Date(copied.date)
+const correctDate = new Date(copied.date.toString())
 correctDate.setHours(0)
 correctDate.setMinutes(0)
-
-isEarlier = correctDate.getTime() < copied.date.getTime()
+const isEarlier = correctDate < holidays[christmas].date
 console.log('New date is earlier:', isEarlier)
-if (isEarlier) {copied.date = correctDate}
-
-console.log(`ID change: ${holidays[christmas].id !== copied.id && copied.id}`)
-console.log(`Name change: ${holidays[christmas].name !== copied.name && copied.name}`)
-console.log(`Date change: ${holidays[christmas].date !== copied.date && copied.date.toLocaleDateString()}`)
-
-
+if (isEarlier) copied.date = correctDate
+console.log('ID change:', holidays[christmas].id !== copied.id && copied.id)
+console.log('Name change:', holidays[christmas].name !== copied.name && copied.name)
+console.log('Date change:', holidays[christmas].date !== copied.date && copied.date)
 const firstHolidayTimestamp = Math.min(
     new Date(holidays[0].date).getTime(),
     new Date(holidays[1].date).getTime(),
@@ -92,7 +82,6 @@ const firstHolidayTimestamp = Math.min(
     new Date(holidays[7].date).getTime(),
     new Date(holidays[8].date).getTime(),
 )
-
 const lastHolidayTimestamp = Math.max(
     new Date(holidays[0].date).getTime(),
     new Date(holidays[1].date).getTime(),
@@ -105,16 +94,14 @@ const lastHolidayTimestamp = Math.max(
     new Date(holidays[8].date).getTime(),
 )
 const firstHoliday = new Date(firstHolidayTimestamp)
-const firstDay = firstHoliday.getDate()
-const firstMonth = firstHoliday.getMonth() + 1
-console.log(`${firstDay}/${firstMonth}/${currentYear}`)
-
+const firstDay = firstHoliday.getDate().toString().padStart(2, 0)
+const firstMonth = (firstHoliday.getMonth() + 1).toString().padStart(2, 0)
 const lastHoliday = new Date(lastHolidayTimestamp)
-const lastDay = lastHoliday.getDate()
-const lastMonth = lastHoliday.getMonth() + 1
-console.log(`${lastDay}/${lastMonth}/${currentYear}`)
-
+const lastDay = lastHoliday.getDate().toString().padStart(2, 0)
+const lastMonth = (lastHoliday.getMonth() + 1).toString().padStart(2, 0)
 const randomHoliday = holidays[Math.round(Math.random() * 9)].date
-const randomDay = randomHoliday.getDate()
-const randomMonth = randomHoliday.getMonth() + 1
+const randomDay = randomHoliday.getDate().toString().padStart(2, 0)
+const randomMonth = (randomHoliday.getMonth() + 1).toString().padStart(2, 0)
+console.log(`${firstDay}/${firstMonth}/${currentYear}`)
+console.log(`${lastDay}/${lastMonth}/${currentYear}`)
 console.log(`${randomDay}/${randomMonth}/${currentYear}`)

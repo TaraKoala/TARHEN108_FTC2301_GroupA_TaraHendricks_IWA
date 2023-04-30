@@ -16,6 +16,9 @@ const divider = '----------------------------------'
 // const total = "Total amount owed: "
 // const result = leo + sarah + divider + divider + total + owed + divider
 
+//let test = (leoBalance*-1).toFixed(2)
+//console.log(test)
+
 const owed = ((leoBalance*-1) + (sarahBalance*-1)).toFixed(2)
 const leo = `${leoName} ${leoSurname.trim()} (Owed: R${(leoBalance*-1).toFixed(2)})`
 const sarah = `${sarahName.trim()} ${sarahSurname} (Owed: R${(sarahBalance*-1).toFixed(2)})`
@@ -23,3 +26,5 @@ const total = "Total amount owed: R"
 const result = leo + '\n' + sarah + '\n' + '\n' + divider + '\n' + '\t' + total + owed + '\n' + divider
 
 console.log(result)
+
+
