@@ -1,63 +1,61 @@
-//covers code from IWA10 onwards, topics covered previously:
-//strings
-//numbers
-//boolean
-//null
-//undefined = all are primitive types
 
-//difference between primitive and composite type.
+const MAX_NUMBER = 15
+const MIN_NUMBER = -5
+const STEP_AMOUNT = 1;
 
-// const first = {name: 'Tara'}
-// const second = {name: 'Tara'}
-
-// console.log(first.name === second.name)
-
-//if its the same 'Tara' in both second and first, returns false because it's in diferent objects.
-//if you log first.name, second.name, returns true, because its the same name of the object. 
-
-// const first = { name: 'Tara'}
-// const second = first
-
-// console.log(first.name)
-// second.name ='Mickey'
-// console.log(first, second)
-
-//OBJECTS
-//Date
-//Math
-//document
-
-// Math.floor = (rounds down a decimal Number)
-// Math.ceil = (rounds up a decimal number)
-
-
-// const original = 120.125
-// const discount = 14.23
-
-// const percentage = (original / 100) * discount
-// console.log(`Big Sale! ${percentage.toFixed(2)}% off!`)
-
-//Math.max(range of numbers, gives you the highest)
-//Math.min(range of numbers, gives you the lowest one)
-//Math.random(gives a random number each time it is run)
-let mafs = Math.round(Math.random() * 100)
-
-console.log(mafs)
-
-// const future = new Date ('10 January 2025 15:15').getTime()
-// const current = new Date().getTime()
-// console.log(`There are ${Math.ceil((future - current) / 1000 / 60 / 60 / 24)} days left`)
-//There are 624 days left
-
-const obj = {
-    test: {
-        hello: {
-            Tara: 'Hi!',
-            Jenna: 'Sup',
-            Zoe: 'Olo',
-        }
-    }
+const element = {
+    number: document.querySelector('[data-key="number"]'),
+    subtract: document.querySelector('[data-key="subtract"]'),
+    add: document.querySelector('[data-key="add"]'),
 }
 
-console.log(obj && obj.test && obj.hello)
 
+const updateColor = () => {
+    const value = parseInt(element.number.value)
+    const singleStep = 250 / (MAX_NUMBER - MIN_NUMBER)
+    
+    const distMax = MAX_NUMBER - value
+    const distMin = value - MIN_NUMBER
+    
+
+    const red = distMax * singleStep
+    const green = distMin * singleStep
+
+    element.number.style.color = `rgb(${red}, ${green}, 50)`
+}
+
+console.log("123" + 4, parseInt(123) +4)
+
+const subtractHandler = () => {
+    const newValue = parseInt(element.number.value) - STEP_AMOUNT
+    element.number.value = newValue;
+
+    if (element.add.disabled === true) {
+        element.add.disabled = false
+    }
+
+    if (newValue <= MIN_NUMBER) {
+        element.subtract.disabled = true
+    }
+
+    updateColor()
+}
+const addHandler = () => {
+    const newValue = parseInt(element.number.value) + STEP_AMOUNT
+    element.number.value = newValue;
+
+    if (element.subtract.disabled === true) {
+        element.subtract.disabled = false
+    }
+
+    if (newValue >= MAX_NUMBER) {
+        element.add.disabled = true
+    }
+
+    updateColor()
+}
+
+element.subtract.addEventListener('click', subtractHandler)
+element.add.addEventListener('click', addHandler)
+
+updateColor()
