@@ -60,3 +60,4 @@ const obj = {
 }
 
 console.log(obj && obj.test && obj.hello)
+
