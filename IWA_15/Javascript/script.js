@@ -10,23 +10,26 @@ const data = {
 
 // Only edit below
 
-const { first = 1 } = data.first || {}
-const { second = 1 } = data.second || {}
-const { third = 1 } = data.third || {}
+const first  = data.lists || {}
+const second = data.lists || {}
+const third = data.lists || {}
 
 const result = []
 
 const extractBiggest = () => {
-	if (first[-1] > second[-1]) {
-		return first
+	if (first[first.length - 1] > second[second.length - 1]) {
+		return first.pop()
 	}
 
-	if (third[-1] < 1) {
-		return second
+	if (third[third.length - 1] < second[second.length - 1] ) {
+		return second.pop()
+	} else {
+		return third.pop()
 	}
-	
-	return third
+		
 }
+
+//The pop() method removes (pops) the last element of an array.
 
 // Only edit above
 
