@@ -3,9 +3,9 @@
 ## Interactive Web Apps - JavasScript Fundamentals
 
 ## Creator
-Tara Hendricks
-email: taradecodehendricks@gmail.com
-github: https://github.com/TaraKoala
+Tara Hendricks <br>
+email: taradecodehendricks@gmail.com <br>
+github: https://github.com/TaraKoala <br>
 
 ## Description
 Compilation of challenges for IWA (Interactive Web Apps), sections 1 - 18 as well as IWA19, which is the Capstone Project. 
