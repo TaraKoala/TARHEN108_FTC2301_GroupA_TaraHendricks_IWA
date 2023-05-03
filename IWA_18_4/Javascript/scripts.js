@@ -28,14 +28,30 @@ const handleDragOver = (event) => {
 }
 
 
-const handleDragStart = (event) => {}
-const handleDragEnd = (event) => {}
-const handleHelpToggle = (event) => {}
-const handleAddToggle = (event) => {}
-const handleAddSubmit = (event) => {}
-const handleEditToggle = (event) => {}
-const handleEditSubmit = (event) => {}
-const handleDelete = (event) => {}
+const handleDragStart = (event) => {
+
+}
+const handleDragEnd = (event) => {
+
+}
+const handleHelpToggle = (event) => {
+
+}
+const handleAddToggle = (event) => {
+
+}
+const handleAddSubmit = (event) => {
+
+}
+const handleEditToggle = (event) => {
+
+}
+const handleEditSubmit = (event) => {
+
+}
+const handleDelete = (event) => {
+    
+}
 
 html.add.cancel.addEventListener('click', handleAddToggle)
 html.other.add.addEventListener('click', handleAddToggle)

@@ -19,6 +19,17 @@ const getDaysInMonth = (date) => new Date(date.getFullYear(), date.getMonth() + 
 
 // Only edit below 
 
+const createArray = (length) => {
+    const result = [];
+
+    for (let i = 0; i < length; i++) {
+        result.push(i)
+    }
+
+    return result;
+}
+
+
 // const createArray = (length) => {
 //     const result = []
 
@@ -91,17 +102,6 @@ const getDaysInMonth = (date) => new Date(date.getFullYear(), date.getMonth() + 
 //     }
 // }
 
-
-const createArray = (length) => {               //for days and weeks array
-    const result = [];
-
-    for (let i = 0; i < length; i++) {
-        result.push(null);
-    }
-
-    return result;
-};
-
 const createData = () => {          //data of days and weeks in particular month 
     const current = new Date();
     
@@ -157,8 +157,8 @@ const createHtml = (data) => {
         const week = data[i];
         let inner = '';
 
-        for (let j = 0; j < week.days.length; j++) {
-            const day = week.days[j];
+        for (let t = 0; t < week.days.length; t++) {
+            const day = week.days[t];
             let classString = 'table__cell';
             const isToday = new Date().getDate() === day.value;
             const isWeekend = day.dayOfWeek === 1 || day.dayOfWeek === 7;
