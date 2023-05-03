@@ -1,4 +1,17 @@
-# TARHEND108_FTC2301_GroupA_TaraHendricks_IWA1
+# Interactive Web Apps JavaScript Fundamentals
 
-Code inspired by https://tallycount.app/ 
-Code along to CodeSpace LMS - https://youtu.be/kG6hCw9mIFQ 
+## IWA_02 Challenge 1 
+
+
+
+### Original script
+
+## Why did the original code not work?
+
+## What changes did you need to make to achieve the intended behaviour?
+
+## Why did the change result in the intended behaviour?
+
+## Are there any other ways in which it could have been solved?
+
+## Resources
